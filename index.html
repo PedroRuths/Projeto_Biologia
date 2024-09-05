@@ -32,12 +32,17 @@
         .left-side {
             flex: 2;
             padding-right: 20px;
+            position: relative; /* Para posicionar as setas dentro da imagem */
         }
 
         .right-side {
             flex: 1;
             border-left: 2px solid #ccc;
             padding-left: 20px;
+        }
+
+        .animal-image-container {
+            position: relative; /* Para posicionar as setas dentro da imagem */
         }
 
         .animal-image {
@@ -47,13 +52,49 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        /* Estilo das setas */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
         .animal-characteristics {
             margin-top: 15px;
             list-style-type: none;
             padding: 0;
         }
 
-        .animal-characteristics li {
+        .taxonomic-info {
+            margin-top: 15px;
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px;
+            border-left: 2px solid #ccc;
+            padding-left: 20px;
+        }
+
+        .animal-characteristics li, .taxonomic-info li {
             margin-bottom: 8px;
         }
 
@@ -112,6 +153,11 @@
         .intro button:hover {
             background-color: #0056b3;
         }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +167,6 @@
         <h1>Bem-vindo à Galeria de Animais</h1>
         <p>Explore diversos animais incríveis, conheça suas características, habitats e muito mais.</p>
         <button onclick="startGallery()">Explorar</button>
-    
     </div>
 
     <!-- Tela principal da galeria -->
@@ -129,15 +174,37 @@
         <!-- Lado esquerdo: Imagem e Características -->
         <div class="left-side">
             <h2 id="animal-name">Leão</h2>
-            <img id="animal-image" src="https://example.com/leao.jpg" alt="Foto de um Leão" class="animal-image">
-            
-            <ul id="animal-characteristics" class="animal-characteristics">
-                <li><strong>Espécie:</strong> Panthera leo</li>
-                <li><strong>Habitat:</strong> Savanas e florestas da África</li>
-                <li><strong>Alimentação:</strong> Carnívoro</li>
-                <li><strong>Tamanho:</strong> Até 3 metros de comprimento</li>
-                <li><strong>Peso:</strong> Até 250 kg</li>
-            </ul>
+
+            <!-- Contêiner da imagem com setas -->
+            <div class="animal-image-container">
+                <img id="animal-image" src="https://example.com/leao1.jpg" alt="Foto de um Leão" class="animal-image">
+
+                <!-- Setas para navegação -->
+                <button class="arrow arrow-left" onclick="previousImage()">&#9664;</button>
+                <button class="arrow arrow-right" onclick="nextImage()">&#9654;</button>
+            </div>
+
+            <!-- Seção de informações do animal -->
+            <div class="info-section">
+                <ul id="animal-characteristics" class="animal-characteristics">
+                    <li><strong>Espécie:</strong> Panthera leo</li>
+                    <li><strong>Habitat:</strong> Savanas e florestas da África</li>
+                    <li><strong>Alimentação:</strong> Carnívoro</li>
+                    <li><strong>Tamanho:</strong> Até 3 metros de comprimento</li>
+                    <li><strong>Peso:</strong> Até 250 kg</li>
+                </ul>
+
+                <!-- Divisão lateral para a ordem taxonômica -->
+                <ul id="taxonomic-info" class="taxonomic-info">
+                    <li><strong>Reino:</strong> Animalia</li>
+                    <li><strong>Filo:</strong> Chordata</li>
+                    <li><strong>Classe:</strong> Mammalia</li>
+                    <li><strong>Ordem:</strong> Carnivora</li>
+                    <li><strong>Família:</strong> Felidae</li>
+                    <li><strong>Gênero:</strong> Panthera</li>
+                    <li><strong>Espécie:</strong> Panthera leo</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Lado direito: Lista de Animais -->
@@ -152,6 +219,7 @@
                 <li onclick="changeAnimal('Crocodilo')">Crocodilo</li>
                 <li onclick="changeAnimal('Águia')">Águia</li>
                 <li onclick="changeAnimal('Pinguim')">Pinguim</li>
+                
             </ul>
         </div>
     </div>
@@ -163,63 +231,105 @@
             document.getElementById('gallery').style.display = 'flex'; // Mostra a galeria
         }
 
-        // Banco de dados dos animais (Nome, imagem, e características)
+        // Banco de dados dos animais (Nome, imagens, características e ordem taxonômica)
         const animals = {
             "Leão": {
                 name: "Leão",
-                image: "https://example.com/leao.jpg",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
                 characteristics: [
                     { label: "Espécie", value: "Panthera leo" },
                     { label: "Habitat", value: "Savanas e florestas da África" },
                     { label: "Alimentação", value: "Carnívoro" },
                     { label: "Tamanho", value: "Até 3 metros de comprimento" },
                     { label: "Peso", value: "Até 250 kg" }
-                ]
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
             },
             "Tigre": {
                 name: "Tigre",
-                image: "https://example.com/tigre.jpg",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
                 characteristics: [
                     { label: "Espécie", value: "Panthera tigris" },
                     { label: "Habitat", value: "Florestas da Ásia" },
                     { label: "Alimentação", value: "Carnívoro" },
                     { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
                     { label: "Peso", value: "Até 300 kg" }
-                ]
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
             },
-            "Elefante": {
-                name: "Elefante",
-                image: "https://example.com/elefante.jpg",
-                characteristics: [
-                    { label: "Espécie", value: "Loxodonta africana" },
-                    { label: "Habitat", value: "Savanas e florestas da África" },
-                    { label: "Alimentação", value: "Herbívoro" },
-                    { label: "Tamanho", value: "Até 4 metros de altura" },
-                    { label: "Peso", value: "Até 6.000 kg" }
-                ]
-            },
+           
             // Adicione mais animais aqui
         };
+
+        // Variável para controlar a imagem atual exibida
+        let currentImageIndex = 0;
 
         // Função para mudar o animal
         function changeAnimal(animalName) {
             const animal = animals[animalName];
-
-            // Atualiza o nome do animal
             document.getElementById('animal-name').textContent = animal.name;
 
-            // Atualiza a imagem do animal
-            document.getElementById('animal-image').src = animal.image;
-            document.getElementById('animal-image').alt = `Foto de um ${animal.name}`;
+            // Atualiza a imagem do carrossel
+            currentImageIndex = 0; // Reseta para a primeira imagem
+            document.getElementById('animal-image').src = animal.images[currentImageIndex];
 
             // Atualiza as características
             const characteristicsList = document.getElementById('animal-characteristics');
-            characteristicsList.innerHTML = '';  // Limpa a lista atual
+            characteristicsList.innerHTML = '';
             animal.characteristics.forEach(characteristic => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `<strong>${characteristic.label}:</strong> ${characteristic.value}`;
                 characteristicsList.appendChild(listItem);
             });
+
+            // Atualiza a ordem taxonômica
+            const taxonomicList = document.getElementById('taxonomic-info');
+            taxonomicList.innerHTML = '';
+            for (const [key, value] of Object.entries(animal.taxonomy)) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}`;
+                taxonomicList.appendChild(listItem);
+            }
+        }
+
+        // Função para ir para a próxima imagem
+        function nextImage() {
+            const animalName = document.getElementById('animal-name').textContent;
+            const animal = animals[animalName];
+            currentImageIndex = (currentImageIndex + 1) % animal.images.length;
+            document.getElementById('animal-image').src = animal.images[currentImageIndex];
+        }
+
+        // Função para voltar para a imagem anterior
+        function previousImage() {
+            const animalName = document.getElementById('animal-name').textContent;
+            const animal = animals[animalName];
+            currentImageIndex = (currentImageIndex - 1 + animal.images.length) % animal.images.length;
+            document.getElementById('animal-image').src = animal.images[currentImageIndex];
         }
     </script>
 
