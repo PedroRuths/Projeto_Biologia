@@ -173,7 +173,7 @@
     <div class="container" id="gallery">
         <!-- Lado esquerdo: Imagem e Características -->
         <div class="left-side">
-            <h2 id="animal-name">Leão</h2>
+            <h2 id="animal-name">Anta</h2>
 
             <!-- Contêiner da imagem com setas -->
             <div class="animal-image-container">
@@ -211,14 +211,36 @@
         <div class="right-side">
             <h2>Outros Animais</h2>
             <ul class="animal-list">
-                <li onclick="changeAnimal('Leão')">Leão</li>
-                <li onclick="changeAnimal('Tigre')">Tigre</li>
-                <li onclick="changeAnimal('Elefante')">Elefante</li>
-                <li onclick="changeAnimal('Girafa')">Girafa</li>
-                <li onclick="changeAnimal('Hipopótamo')">Hipopótamo</li>
-                <li onclick="changeAnimal('Crocodilo')">Crocodilo</li>
-                <li onclick="changeAnimal('Águia')">Águia</li>
-                <li onclick="changeAnimal('Pinguim')">Pinguim</li>
+                <li onclick="changeAnimal('Anta')">Anta</li>
+                <li onclick="changeAnimal('Ararajuba')">Ararajuba</li>
+                <li onclick="changeAnimal('Ariranha')">Ariranha</li>
+                <li onclick="changeAnimal('Baleia-franca-do-sul')">Baleia-franca-do-sul</li>
+                <li onclick="changeAnimal('Boto cor-de-rosa')">Boto cor-de-rosa</li>
+                <li onclick="changeAnimal('Cachorro-do-mato')">Cachorro-do-mato</li>
+                <li onclick="changeAnimal('Cervo-do-Pantanal')">Cervo-do-Pantanal</li>
+                <li onclick="changeAnimal('Cuxiú-preto')">Cuxiú-preto</li>
+                <li onclick="changeAnimal('Gato-maracajá')">Gato-maracajá</li>
+                <li onclick="changeAnimal('Jacutinga')">Jacutinga</li>
+                <li onclick="changeAnimal('Lagartixa-da-areia')">Lagartixa-da-areia</li>
+                <li onclick="changeAnimal('Lobo-guará')">Lobo-guará</li>
+                <li onclick="changeAnimal('Macaco-aranha-de-cara-preta')">Macaco-aranha-de-cara-preta</li>
+                <li onclick="changeAnimal('Mico-leão-dourado')">Mico-leão-dourado</li>
+                <li onclick="changeAnimal('Morceguinho-do-cerrado')">Morceguinho-do-cerrado</li>
+                <li onclick="changeAnimal('Muriqui-do-norte')">Muriqui-do-norte</li>
+                <li onclick="changeAnimal('Onça-Pintada')">Onça-Pintada</li>
+                <li onclick="changeAnimal('Peixe-boi-da-Amazônia')">Peixe-boi-da-Amazônia</li>
+                <li onclick="changeAnimal('Pica-pau-amarelo')">Pica-pau-amarelo</li>
+                <li onclick="changeAnimal('Preguiça-de-coleira')">Preguiça-de-coleira</li>
+                <li onclick="changeAnimal('Saíra-militar')">Saíra-militar</li>
+                <li onclick="changeAnimal('Sapo-folha')">Sapo-folha</li>
+                <li onclick="changeAnimal('Soldadinho-do-araripe')">Soldadinho-do-araripe</li>
+                <li onclick="changeAnimal('Tamanduá-bandeira')">Tamanduá-bandeira</li>
+                <li onclick="changeAnimal('Tartaruga-de-couro')">Tartaruga-de-couro</li>
+                <li onclick="changeAnimal('Tartaruga-oliva')">Tartaruga-oliva</li>
+                <li onclick="changeAnimal('Tatu-bola')">Tatu-bola</li>
+                <li onclick="changeAnimal('Toninha')">Toninha</li>
+                <li onclick="changeAnimal('Uacari')">Uacari</li>
+                <li onclick="changeAnimal('Udu-de-coroa-azul-do-nordeste')">Udu-de-coroa-azul-do-nordeste</li>
                 
             </ul>
         </div>
@@ -233,8 +255,8 @@
 
         // Banco de dados dos animais (Nome, imagens, características e ordem taxonômica)
         const animals = {
-            "Leão": {
-                name: "Leão",
+            "Anta": {
+                name: "Anta",
                 images: [
                     "https://example.com/leao1.jpg",
                     "https://example.com/leao2.jpg",
@@ -257,8 +279,8 @@
                     especie: "Panthera leo"
                 }
             },
-            "Tigre": {
-                name: "Tigre",
+            "Ararajuba": {
+                name: "Ararajuba",
                 images: [
                     "https://example.com/tigre1.jpg",
                     "https://example.com/tigre2.jpg",
@@ -281,6 +303,682 @@
                     especie: "Panthera tigris"
                 }
             },
+            "Ariranha": {
+                name: "Ariranha",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/leao1.jpg",
+                    "https://example.com/leao2.jpg",
+                    "https://example.com/leao3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera leo" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera leo"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+            "": {
+                name: "",
+                images: [
+                    "https://example.com/tigre1.jpg",
+                    "https://example.com/tigre2.jpg",
+                    "https://example.com/tigre3.jpg"
+                ],
+                characteristics: [
+                    { label: "Espécie", value: "Panthera tigris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera tigris"
+                }
+            },
+        
+
+            
+            
            
             // Adicione mais animais aqui
         };
