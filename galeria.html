@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Animais</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color:    #c21717;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin:auto;
+           
+        }
+
+        .logo {
+            height: 60px;
+            margin-right: 20px;
+            width: 60px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-right: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #c21717;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #f0f0f0 ;
+            
+            
+        }
+
+        .left-side {
+            flex: 3;
+           
+            padding-right: 20px;
+            position: relative;
+            color: #000000;
+            
+        }
+
+        .right-side {
+            flex: 1;
+            border-left: 2px solid #000000;
+            padding-left: 20px;
+            
+        }
+
+        .animal-image-container {
+            position: relative;
+        }
+
+        .animal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            color: #f0f0f0;
+        }
+
+        .animal-characteristics-container, .taxonomic-info-container {
+            margin-top: 15px;
+            color: #f0f0f0;
+        }
+
+        .animal-characteristics-container h3, .taxonomic-info-container h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #f0f0f0;
+        }
+
+        .animal-characteristics, .taxonomic-info {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #f0f0f0;
+        }
+
+        .animal-characteristics li, .taxonomic-info li {
+            margin-bottom: 8px;
+        }
+
+        .separator {
+            border-left: 2px solid #ccc;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .animal-list {
+            list-style-type: none;
+            padding: 0;
+            color: #f0f0f0;
+        }
+
+        .animal-list li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+
+        .animal-list li:hover {
+            color: #007BFF;
+        }
+        
+        .linha {
+            border: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-content">
+            <img src="img/logo.png" alt="Logo do Site" class="logo">
+            <h1>Guardiões da Fauna</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" id="gallery">
+        <div class="left-side">
+            <h2 id="animal-name">Anta</h2>
+            <div class="animal-image-container">
+                <img id="animal-image" src="img/anta1.jpg" alt="Foto de um Leão" class="animal-image">
+                <button class="arrow arrow-left" onclick="previousImage()">&#9664;</button>
+                <button class="arrow arrow-right" onclick="nextImage()">&#9654;</button>
+            </div>
+
+            <div class="info-section">
+                <div class="animal-characteristics-container">
+                    <h3>Características</h3>
+                    <ul id="animal-characteristics" class="animal-characteristics">
+                        <li><strong>Nome científico:</strong> Tapirus terrestris</li>
+                        <li><strong>Habitat:</strong>Cerrado, mata atlântica, Amazônia, Pantanal</li>
+                        <li><strong>Alimentação:</strong> Folhas, ramos, brotos, caules, frutas aquáticas</li>
+                        <li><strong>Expectativa de vida:</strong>35 anos</li>
+                        <li><strong>Tamanho:</strong>2 m</li>
+                        <li><strong>Peso:</strong>300kg</li>
+                        <li><strong>Atividade:</strong>Diurna</li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- Linha separadora -->
+                <div class="separator"></div>
+<hr class="linha">
+                <div class="taxonomic-info-container">
+                    <h3>Ordem Taxonômica</h3>
+                    <ul id="taxonomic-info" class="taxonomic-info">
+                        <li><strong>Reino:</strong> Animalia</li>
+                        <li><strong>Filo:</strong> Chordata</li>
+                        <li><strong>Classe:</strong> Mammalia</li>
+                        <li><strong>Ordem:</strong> Perissodactyla</li>
+                        <li><strong>Família:</strong> Tapiridae</li>
+                        <li><strong>Gênero:</strong> Tapirus</li>
+                        <li><strong>Espécie:</strong>Tapirus terrestris</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <h2>Outros Animais</h2>
+            <ul class="animal-list">
+                <li onclick="changeAnimal('Anta')">Anta</li>
+                <li onclick="changeAnimal('Ararajuba')">Ararajuba</li>
+                <li onclick="changeAnimal('Ariranha')">Ariranha</li>
+                <li onclick="changeAnimal('Baleia-franca-do-sul')">Baleia-franca-do-sul</li>
+                <li onclick="changeAnimal('Boto cor-de-rosa')">Boto cor-de-rosa</li>
+                <li onclick="changeAnimal('Cachorro-do-mato')">Cachorro-do-mato</li>
+                <li onclick="changeAnimal('Cervo-do-Pantanal')">Cervo-do-Pantanal</li>
+                <li onclick="changeAnimal('Cuxiú-preto')">Cuxiú-preto</li>
+                <li onclick="changeAnimal('Gato-maracajá')">Gato-maracajá </li>
+                <li onclick="changeAnimal('Jacutinga')">Jacutinga</li>
+                <li onclick="changeAnimal('Lagartixa-da-areia')">Lagartixa-da-areia </li>
+                <li onclick="changeAnimal('Lobo-guará')">Lobo-guará</li>
+                <li onclick="changeAnimal('Macaco-aranha-de-cara-preta')">Macaco-aranha-de-cara-preta</li>
+                <li onclick="changeAnimal('Mico-leão-dourado')">Mico-leão-dourado</li>
+                <li onclick="changeAnimal('Morceguinho-do-cerrado')">Morceguinho-do-cerrado</li>
+                <li onclick="changeAnimal('Muriqui-do-norte')">Muriqui-do-norte</li>
+                <li onclick="changeAnimal('Onça-Pintada')">Onça-Pintada</li>
+                <li onclick="changeAnimal('Peixe-boi-da-Amazônia')">Peixe-boi-da-Amazônia</li>
+                <li onclick="changeAnimal('Pica-pau-amarelo')">Pica-pau-amarelo</li>
+                <li onclick="changeAnimal('Preguiça-de-coleira')">Preguiça-de-coleira</li>
+                <li onclick="changeAnimal('Saíra-militar')">Saíra-militar</li>
+                <li onclick="changeAnimal('Sapo-folha')">Sapo-folha</li>
+                <li onclick="changeAnimal('Soldadinho-do-araripe')">Soldadinho-do-araripe</li>
+                <li onclick="changeAnimal('Tamanduá-bandeira')">Tamanduá-bandeira</li>
+                <li onclick="changeAnimal('Tartaruga-de-couro')">Tartaruga-de-couro</li>
+                <li onclick="changeAnimal('Tartaruga-oliva')">Tartaruga-oliva</li>
+                <li onclick="changeAnimal('Tatu-bola')">Tatu-bola</li>
+                <li onclick="changeAnimal('Toninha')">Toninha</li>
+                <li onclick="changeAnimal('Uacari')">Uacari</li>
+                <li onclick="changeAnimal('Udu-de-coroa-azul-do-nordeste')">Udu-de-coroa-azul-do-nordeste</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const animals = {
+            "Anta": {
+                name: "Anta",
+                images: [
+                    "img/anta1.jpg",
+                    "img/anta2.jpeg",
+                    "img/anta3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Tapirus terrestris" },
+                    { label: "Habitat", value: "Cerrado, mata atlântica, Amazônia, Pantanal " },
+                    { label: "Alimentação", value: "Folhas, ramos, brotos, caules, frutas aquáticas" },
+                    { label: "Expectativa de vida", value: "35 anos" },
+                    { label: "Tamanho", value: "2 m" },
+                    { label: "Peso", value: "300kg" },
+                    { label: "Atividade", value: "Diurna" }
+                    
+                ], 
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Perissodactyla",
+                    familia: "Tapiridae",
+                    genero: "Tapirus",
+                    especie: "Tapirus terrestris"
+                }
+            },
+            "Ararajuba": {
+                name: "Ararajuba",
+                images: [
+                    "img/ararajuba1.webp",
+                    "img/ararajuba2.jpg",
+                    "img/ararajuba3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Primolius maracana" },
+                    { label: "Habitat", value: "Norte do Maranhão " },
+                    { label: "Alimentação", value: "sementes e frutas " },
+                    { label: "Expectativa de vida", value: "30 anos" },
+                    { label: "Tamanho", value: "34 cm " },
+                    { label: "Peso", value: "255 g" },
+                    { label: "Atividade", value: "geralmente diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Aves",
+                    ordem: "Psittaciformes",
+                    familia: "Psittacidae",
+                    genero: "Primolius",
+                    especie: "Primolius maracana"
+                }
+            },
+            "Ariranha": {
+                name: "Ariranha",
+                images: [
+                    "img/ariranha1.webp",
+                    "img/ariranha2.png",
+                    "img/ariranha3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Pteronura brasiliensis" },
+                    { label: "Habitat", value: "ambientes de água doce " },
+                    { label: "Alimentação", value: "pequenos mamíferos, aves, répteis e invertebrados" },
+                    { label: "Expectativa de vida", value: "11 anos" },
+                    { label: "Tamanho", value: "180cm" },
+                    { label: "Peso", value: "26kg" },
+                    { label: "Atividade", value: "diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Mustelidae",
+                    genero: "Pteronura",
+                    especie: "Pteronura brasiliensis"
+                }
+            },
+            "Baleia-franca-do-sul": {
+                name: "Baleia-franca-do-sul",
+                images: [
+                    "img/Baleia-franca-do-sul1.webp",
+                    "img/Baleia-franca-do-sul2.webp",
+                    "img/Baleia-franca-do-sul3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Eubalaena australis" },
+                    { label: "Habitat", value: "região sul do Brasil " },
+                    { label: "Alimentação", value: "krill e copépodes " },
+                    { label: "Expectativa de vida", value: "70 anos" },
+                    { label: "Tamanho", value: "17 m" },
+                    { label: "Peso", value: "60 toneladas " },
+                    { label: "Atividade", value: "geralmente diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Cetacea",
+                    familia: "Balaenidae",
+                    genero: "Eubalaena",
+                    especie: "Eubalaena australis"
+                }
+            },
+            "Boto cor-de-rosa": {
+                name: "Boto cor-de-rosa",
+                images: [
+                    "img/Boto cor-de-rosa1.webp",
+                    "img/Boto cor-de-rosa2.jpg",
+                    "img/Boto cor-de-rosa3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Inia geoffrensis" },
+                    { label: "Habitat", value: "bacia amazônica " },
+                    { label: "Alimentação", value: "camarões, carangueijos e tartarugas" },
+                    { label: "Expectativa de vida", value: "36 a 40 anos " },
+                    { label: "Tamanho", value: "2,55 m" },
+                    { label: "Peso", value: "185 kg" },
+                    { label: "Atividade", value: "diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Cetacea",
+                    familia: "Iniidae",
+                    genero: "Inia",
+                    especie: "Inia geoffrensis"
+                }
+            },
+            "Cachorro-do-mato": {
+                name: "Cachorro-do-mato",
+                images: [
+                    "img/cachorrodomato1.jpg",
+                    "img/cachorrodomato2.jpg",
+                    "img/cachorrodomato3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Cerdocyon thous" },
+                    { label: "Habitat", value: "Áreas florestais, cerrados" },
+                    { label: "Alimentação", value: "frutos, insetos, crustáceos, pequenos mamíferos" },
+                    { label: "Expectativa de vida", value: "11 anos " },
+                    { label: "Tamanho", value: "65 cm" },
+                    { label: "Peso", value: "5,7 kg" },
+                    { label: "Atividade", value: "noturno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Canidae",
+                    genero: "Cerdocyon",
+                    especie: "Cerdocyon thous"
+                }
+            },
+            "Cervo-do-Pantanal": {
+                name: "Cervo-do-Pantanal",
+                images: [
+                    "img/cervodopantanal1.jpg",
+                    "img/cervodopantanal2.webp",
+                    "img/cervodopantanal3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Blastocerus dichotomus" },
+                    { label: "Habitat", value: "Savanas alagadas, ambientes úmidos" },
+                    { label: "Alimentação", value: "Consomem arbustos e leguminosas " },
+                    { label: "Expectativa de vida", value: "10 a 15 anos" },
+                    { label: "Tamanho", value: "1,3 m" },
+                    { label: "Peso", value: "140 kg  " },
+                    { label: "Atividade", value: "diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Artiodactyla",
+                    familia: "Cervidae",
+                    genero: "Blastocerus",
+                    especie: "Blastocerus dichotomus"
+                }
+            },
+            "Cuxiú-preto": {
+                name: "Cuxiú-preto",
+                images: [
+                    "img/cuxiupreto1.jpg",
+                    "img/cuxiupreto2.webp",
+                    "img/cuxiupreto3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Chiropotes satanas" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Primates",
+                    familia: "Atelidae",
+                    genero: "Chiropotes",
+                    especie: "Chiropotes satanas"
+                }
+            },
+            "Gato-maracajá": {
+                name: "Gato-maracajá",
+                images: [
+                    "img/gatomaracaja1.webp",
+                    "img/gatomaracaja2.webp",
+                    "img/gatomaracaja3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Leopardus wiedii" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Leopardus",
+                    especie: "Leopardus wiedii"
+                }
+            },
+            "Jacutinga": {
+                name: "Jacutinga",
+                images: [
+                    "img/jacutinga1.jpg",
+                    "img/jacutinga2.webp",
+                    "img/jacutinga3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Aburria jacutinga" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Aves",
+                    ordem: "Galliformes",
+                    familia: "Cracidae",
+                    genero: "Aburria",
+                    especie: "Aburria jacutinga"
+                }
+            },
+            "Lagartixa-da-areia": {
+                name: "Lagartixa-da-areia",
+                images: [
+                    "img/lagartixa1.avif",
+                    "img/lagartixadaareia2.jpg",
+                    "img/lagartixadaareia3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Liolaemus occipitalis" },
+                    { label: "Habitat", value: "Dunas em restingas do RS" },
+                    { label: "Alimentação", value: "Insetos, aracnídeos " },
+                    { label: "Expectativa de vida", value: "9 anos" },
+                    { label: "Tamanho", value: "8cm" },
+                    { label: "Peso", value: "8 a 20 g" },
+                    { label: "Atividade", value: "Diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Reptilia",
+                    ordem: "Squamata",
+                    familia: "Iguanidae",
+                    genero: "Liolaemus",
+                    especie: "Liolaemus occipitalis"
+                }
+            },
+            "Lobo-guará": {
+                name: "Lobo-guará",
+                images: [
+                    "img/loboguara1.webp",
+                    "img/loboguara2.jpg",
+                    "img/loboguara3.jpeg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Chrysocyon brachyurus" },
+                    { label: "Habitat", value: "Cerrado" },
+                    { label: "Alimentação", value: "Frutos, aves, roadores " },
+                    { label: "Expectativa de vida", value: "15 anos" },
+                    { label: "Tamanho", value: "1,2 m" },
+                    { label: "Peso", value: "23kg" },
+                    { label: "Atividade", value: "Noturno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Canidae",
+                    genero: "Chrysocyon",
+                    especie: "Chrysocyon brachyurus"
+                }
+            },
+            "Macaco-aranha-de-cara-preta": {
+                name: "Macaco-aranha-de-cara-preta",
+                images: [
+                    "img/macaco-aranha-preto-de-cara-preta-1.avif",
+                    "img/macaco-aranha-preto-de-cara-preta-2.jpg",
+                    "img/macaco-aranha-preto-de-cara-preta-3.jpeg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Atelops chamek" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3 metros de comprimento" },
+                    { label: "Peso", value: "Até 250 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Primates",
+                    familia: "Atelidae",
+                    genero: "Atelops",
+                    especie: "Atelops chamek"
+                }
+            },
+            "Mico-leão-dourado": {
+                name: "Mico-leão-dourado",
+                images: [
+                    "img/mico-leão-dourado1.webp",
+                    "img/mico-leão-dourado2.png",
+                    "img/mico-leão-dourado3.avif"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Leontopithecus rosalia" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Primates",
+                    familia: "Callitrichidae",
+                    genero: "Leontopithecus",
+                    especie: "Leontopithecus rosalia"
+                }
+            },
+            "Morceguinho-do-cerrado": {
+                name: "Morceguinho-do-cerrado",
+                images: [
+                    "img/Morceguinho-do-cerrado1.jpg",
+                    "img/Morceguinho-do-cerrado2.jpg",
+                    "img/Morceguinho-do-cerrado3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Micronycteris minuta" },
+                    { label: "Habitat", value: "Cerrado" },
+                    { label: "Alimentação", value: "insetos" },
+                    { label: "Expectativa de vida", value: "5 a 10 anos" },
+                    { label: "Tamanho", value: "34,7- 37,7 mm" },
+                    { label: "Peso", value: "12 g" },
+                    { label: "Atividade", value: "noturno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Chiroptera",
+                    familia: "Phyllostomidae",
+                    genero: "Micronycteris",
+                    especie: "Micronycteris minuta"
+                }
+            },
+            "Muriqui-do-norte": {
+                name: "Muriqui-do-norte",
+                images: [
+                    "img/Muriqui-do-norte1.jpg",
+                    "img/Muriqui-do-norte2.jpg",
+                    "img/Muriqui-do-norte3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Brachyteles hypoxanthus" },
+                    { label: "Habitat", value: "Folhas, frutos, néctar das flores, brotos, sementes e casca de árvores" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "30 anos" },
+                    { label: "Tamanho", value: "79 centímetros" },
+                    { label: "Peso", value: "15 kg" },
+                    { label: "Atividade", value: "diurno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Primates",
+                    familia: "Atelidae",
+                    genero: "Brachyteles",
+                    especie: "Brachyteles hypoxanthus"
+                }
+            },
+            "Onça-Pintada": {
+                name: "Onça-Pintada",
+                images: [
+                    "img/Onça-Pintada1.webp",
+                    "img/Onça-Pintada2.JPG",
+                    "img/Onça-Pintada3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Panthera onca" },
+                    { label: "Habitat", value: "Sudoeste do eua ate norte da Argentina e passa pelo Brasil " },
+                    { label: "Alimentação", value: "Animais silvestres " },
+                    { label: "Expectativa de vida", value: "12 – 15 anos" },
+                    { label: "Tamanho", value: "1,1 a 1,8 m" },
+                    { label: "Peso", value: "56 a 96 kg " },
+                    { label: "Atividade", value: "Ambas" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Carnivora",
+                    familia: "Felidae",
+                    genero: "Panthera",
+                    especie: "Panthera onca"
+                }
+            },
+            "Peixe-boi-da-Amazônia": {
+                name: "Peixe-boi-da-Amazônia",
+                images: [
+                    "img/Peixe-boi-da-Amazônia1.webp",
+                    "img/Peixe-boi-da-Amazônia2.jpg",
+                    "img/Peixe-boi-da-Amazônia3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Trichechus inunguis" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Sirenia",
+                    familia: "Trichechidae",
+                    genero: "Trichechus",
+                    especie: "Trichechus inunguis"
+                }
+            },
+            "Pica-pau-amarelo": {
+                name: "Pica-pau-amarelo",
+                images: [
+                    "img/Pica-pau-amarelo1.jpg",
+                    "img/Pica-pau-amarelo2.jpg",
+                    "img/Pica-pau-amarelo3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Celeus flavescens" },
+                    { label: "Habitat", value: "Bolívia até mato grosso" },
+                    { label: "Alimentação", value: "Larvas, insetos, formigas e cupins" },
+                    { label: "Expectativa de vida", value: "10 a 15 anos " },
+                    { label: "Tamanho", value: "24 a 36cm" },
+                    { label: "Peso", value: "95 a 131g" },
+                    { label: "Atividade", value: "diurno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Aves",
+                    ordem: "Piciformes",
+                    familia: "Picidae",
+                    genero: "Celeus",
+                    especie: "Celeus flavescens"
+                }
+            },
+            "Preguiça-de-coleira": {
+                name: "Preguiça-de-coleira",
+                images: [
+                    "img/Preguiça-de-coleira1.jpg",
+                    "img/Preguiça-de-coleira2.webp",
+                    "img/Preguiça-de-coleira3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Bradypus torquatus" },
+                    { label: "Habitat", value: "Mata atlântica" },
+                    { label: "Alimentação", value: "folhas de árvores e cipós " },
+                    { label: "Expectativa de vida", value: "12 anos" },
+                    { label: "Tamanho", value: "55-72cm" },
+                    { label: "Peso", value: "4-7,5kg" },
+                    { label: "Atividade", value: "ambas" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Pilosa",
+                    familia: "Bradypodidae",
+                    genero: "Bradypus",
+                    especie: "Bradypus torquatus"
+                }
+            },
+            "Saíra-militar": {
+                name: "Saíra-militar",
+                images: [
+                    "img/Saíra-militar1.jpg",
+                    "img/Saíra-militar2.jpg",
+                    "img/Saíra-militar3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Chlorostilbon militaris" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Aves",
+                    ordem: "Passeriformes",
+                    familia: "Thraupidae",
+                    genero: "Chlorostilbon",
+                    especie: "Chlorostilbon militaris"
+                }
+            },
+            "Sapo-folha": {
+                name: "Sapo-folha",
+                images: [
+                    "img/Sapo-folha1.jpg",
+                    "img/Sapo-folha2.webp",
+                    "img/Sapo-folha3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Proceratophrys boiei" },
+                    { label: "Habitat", value: "Serra do Timbó, Bahia" },
+                    { label: "Alimentação", value: "Grilos, besouros, baratas, aranhasrnívoro" },
+                    { label: "Expectativa de vida", value: "12 anos" },
+                    { label: "Tamanho", value: "40 a 62 mm" },
+                    { label: "Peso", value: "9,53 g" },
+                    { label: "Atividade", value: "Ambas" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Amphibia",
+                    ordem: "Anura",
+                    familia: "Cycloramphidae",
+                    genero: "Proceratophrys",
+                    especie: "Proceratophrys boiei"
+                }
+            },
+            "Soldadinho-do-araripe": {
+                name: "Soldadinho-do-araripe",
+                images: [
+                    "img/Soldadinho-do-araripe1.jpg",
+                    "img/Soldadinho-do-araripe2.JPG",
+                    "img/Soldadinho-do-araripe3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Antilophia bokermanni" },
+                    { label: "Habitat", value: "matas úmidas localizadas perto das nascentes dos rios (caatinga)" },
+                    { label: "Alimentação", value: "frutas e invertebrados" },
+                    { label: "Expectativa de vida", value: "5 a 10 anos" },
+                    { label: "Tamanho", value: "15 cm" },
+                    { label: "Peso", value: "20 gramas" },
+                    { label: "Atividade", value: "noturna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Aves",
+                    ordem: "Passeriformes",
+                    familia: "Thraupidae",
+                    genero: "Antilophia",
+                    especie: "Antilophia bokermanni"
+                }
+            },
+            "Tamanduá-bandeira": {
+                name: "Tamanduá-bandeira",
+                images: [
+                    "img/Tamanduá-bandeira1.webp",
+                    "img/Tamanduá-bandeira2.jpg",
+                    "img/Tamanduá-bandeira3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Myrmecophaga tridactyla" },
+                    { label: "Habitat", value: "america central até a merica do su" },
+                    { label: "Alimentação", value: "formigas e cupins" },
+                    { label: "Expectativa de vida", value: "14 anos" },
+                    { label: "Tamanho", value: "1,8 - 2,2 m" },
+                    { label: "Peso", value: "33-41 kg" },
+                    { label: "Atividade", value: "noturno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Pilosa",
+                    familia: "Myrmecophagidae",
+                    genero: "Myrmecophaga",
+                    especie: "Myrmecophaga tridactyla"
+                }
+            },
+            "Tartaruga-de-couro": {
+                name: "Tartaruga-de-couro",
+                images: [
+                    "img/tartarugacouro1.jpg",
+                    "img/tartarugacouro2.jpg",
+                    "img/tartarugacouro3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Dermochelys coriacea" },
+                    { label: "Habitat", value: "zonas tropicais e temperadas dos oceanos Índico pacífico e atlântico" },
+                    { label: "Alimentação", value: "zooplâncton gelatinoso, como água vivas e tunicados " },
+                    { label: "Expectativa de vida", value: "80 anos" },
+                    { label: "Tamanho", value: "1,8 a 2,2 metros " },
+                    { label: "Peso", value: "250 a 700 kg " },
+                    { label: "Atividade", value: "noturno" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Reptilia",
+                    ordem: "Testudines",
+                    familia: "Dermochelyidae",
+                    genero: "Dermochelys",
+                    especie: "Dermochelys coriacea"
+                }
+            },
+            "Tartaruga-oliva": {
+                name: "Tartaruga-oliva",
+                images: [
+                    "img/Tartaruga-oliva1.jpg",
+                    "img/Tartaruga-oliva2.webp",
+                    "img/Tartaruga-oliva3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Lepidochelys olivacea" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Reptilia",
+                    ordem: "Testudines",
+                    familia: "Cheloniidae",
+                    genero: "Lepidochelys",
+                    especie: "Lepidochelys olivacea"
+                }
+            },
+            "Tatu-bola": {
+                name: "Tatu-bola",
+                images: [
+                    "img/Tatu-bola1.jpg",
+                    "img/Tatu-bola2.webp",
+                    "img/Tatu-bola3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Tolypeutes tricinctus" },
+                    { label: "Habitat", value: "caatinga cerrado" },
+                    { label: "Alimentação", value: "cupins, pequenos invertebrados e frutos" },
+                    { label: "Expectativa de vida", value: "15 anos " },
+                    { label: "Tamanho", value: "43 cm " },
+                    { label: "Peso", value: "1,6kg" },
+                    { label: "Atividade", value: "noturnos" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Cingulata",
+                    familia: "Dasypodidae",
+                    genero: "Tolypeutes",
+                    especie: "Tolypeutes tricinctus"
+                }
+            },
+            "Toninha": {
+                name: "Toninha",
+                images: [
+                    "img/Toninha1.webp",
+                    "img/Toninha2.jpg",
+                    "img/Toninha3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Phoceoena phoceoena" },
+                    { label: "Habitat", value: "Savanas e florestas da África" },
+                    { label: "Alimentação", value: "Peixes ósseos e lulas costeiras" },
+                    { label: "Expectativa de vida", value: "20anos" },
+                    { label: "Tamanho", value: "53kg" },
+                    { label: "Peso", value: "1,5 m" },
+                    { label: "Atividade", value: "Diurna" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Cetartiodactyla",
+                    familia: "Delphinidae",
+                    genero: "Phoceoena",
+                    especie: "Phoceoena phoceoena"
+                }
+            },
+            "Uacari": {
+                name: "Uacari",
+                images: [
+                    "img/Uacari1.jpg",
+                    "img/Uacari2.jpg",
+                    "img/Uacari3.jpg"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Cacajao amuna" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Mammalia",
+                    ordem: "Primates",
+                    familia: "Pitheciidae",
+                    genero: "Cacajao",
+                    especie: "Cacajao amuna"
+                }
+            },
+            "Udu-de-coroa-azul-do-nordeste": {
+                name: "Udu-de-coroa-azul-do-nordeste",
+                images: [
+                    "img/Udu-de-coroa-azul-do-nordeste1.webp",
+                    "img/Udu-de-coroa-azul-do-nordeste2.jpg",
+                    "img/Udu-de-coroa-azul-do-nordeste3.webp"
+                ],
+                characteristics: [
+                    { label: "Nome científico", value: "Vireo carmioli" },
+                    { label: "Habitat", value: "Florestas da Ásia" },
+                    { label: "Alimentação", value: "Carnívoro" },
+                    { label: "Expectativa de vida", value: "Blastocerus dichotomus" },
+                    { label: "Tamanho", value: "Até 3,3 metros de comprimento" },
+                    { label: "Peso", value: "Até 300 kg" },
+                    { label: "Atividade", value: "" }
+                ],
+                taxonomy: {
+                    reino: "Animalia",
+                    filo: "Chordata",
+                    classe: "Aves",
+                    ordem: "Passeriformes",
+                    familia: "Vireonidae",
+                    genero: "Vireo",
+                    especie: "Vireo carmioli"
+                }
+            }
+            // Adicione mais animais conforme necessário
+        };
+
+        let currentAnimal = "Leão";
+        let currentImageIndex = 0;
+
+        function changeAnimal(animalName) {
+            const animal = animals[animalName];
+            document.getElementById('animal-name').textContent = animal.name;
+            currentAnimal = animalName;
+            currentImageIndex = 0;
+            document.getElementById('animal-image').src = animal.images[currentImageIndex];
+
+            const characteristicsList = document.getElementById('animal-characteristics');
+            characteristicsList.innerHTML = '';
+            animal.characteristics.forEach(characteristic => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${characteristic.label}:</strong> ${characteristic.value}`;
+                characteristicsList.appendChild(listItem);
+            });
+
+            const taxonomicList = document.getElementById('taxonomic-info');
+            taxonomicList.innerHTML = '';
+            for (const [key, value] of Object.entries(animal.taxonomy)) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${value}`;
+                taxonomicList.appendChild(listItem);
+            }
+        }
+
+        function nextImage() {
+            const animal = animals[currentAnimal];
+            currentImageIndex = (currentImageIndex + 1) % animal.images.length;
+            document.getElementById('animal-image').src = animal.images[currentImageIndex];
+        }
+
+        function previousImage() {
+            const animal = animals[currentAnimal];
+            currentImageIndex = (currentImageIndex - 1 + animal.images.length) % animal.images.length;
+            document.getElementById('animal-image').src = animal.images[currentImageIndex];
+        }
+
+        // Garante que o Leão seja carregado na inicialização
+        window.onload = function() {
+            changeAnimal('Leão');
+        };
+    </script>
+
+</body>
+</html>
